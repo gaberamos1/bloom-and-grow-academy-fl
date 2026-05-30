@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom and Grow Academy | Childcare & Early Learning in Orlando, FL</title>
+  <meta name="description" content="Bloom and Grow Academy provides nurturing, high-quality childcare and early education programs in Orlando, Florida. Schedule a tour today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #F26A3D;
+      --orange-dark: #dd5a31;
+      --purple: #7A3EB1;
+      --cream: #FFF7EC;
+      --green: #8BC34A;
+      --charcoal: #1F2937;
+      --text: #2f3742;
+      --muted: #64748b;
+      --bg: #f8faf7;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Lato', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', Arial, sans-serif;
+      line-height: 1.15;
+      color: #1f2937;
+      margin: 0 0 18px;
+    }
+
+    p { margin: 0 0 18px; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 28px rgba(31,41,55,.08);
+    }
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: var(--purple);
+      font-size: 1.05rem;
+    }
+    .brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: .95rem;
+      color: #475569;
+    }
+    .nav-links a:hover { color: var(--orange); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      padding: 13px 22px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      box-shadow: 0 12px 28px rgba(242,106,61,.22);
+      cursor: pointer;
+      background: var(--orange);
+      color: white;
+    }
+    .btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--purple);
+      border-color: var(--purple);
+      box-shadow: none;
+    }
+    .btn-secondary:hover { background: rgba(122,62,177,.08); color: var(--purple); }
+    .eyebrow {
+      color: var(--purple);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: .78rem;
+      margin-bottom: 14px;
+    }
+
+    .hero {
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffe1d4 0%, #fff7d8 45%, #ead9fa 100%);
+      padding: 90px 0 105px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 58px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.75rem, 6vw, 5.5rem);
+      max-width: 650px;
+    }
+    .hero p {
+      color: #5f6d7e;
+      font-size: 1.15rem;
+      max-width: 620px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .hero-card {
+      background: white;
+      border-radius: 34px;
+      padding: 22px;
+      box-shadow: 0 24px 70px rgba(31,41,55,.18);
+      transform: rotate(2deg);
+      position: relative;
+    }
+    .hero-card:before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(139,195,74,.22);
+      right: -28px;
+      top: -28px;
+      z-index: 0;
+    }
+    .hero-card img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 26px;
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    section { padding: 88px 0; }
+    .section-alt { background: var(--cream); }
+    .section-white { background: white; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 62px;
+      align-items: center;
+    }
+    .section-img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 34px;
+      box-shadow: 0 22px 58px rgba(31,41,55,.14);
+      display: block;
+    }
+    .center { text-align: center; }
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .card {
+      background: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 14px 40px rgba(31,41,55,.09);
+    }
+    .feature-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .check {
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+    .program-card {
+      background: #f8faf7;
+      transition: .2s ease;
+      text-align: center;
+    }
+    .program-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(31,41,55,.12); }
+    .icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      background: #ffe3d7;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 22px;
+      font-size: 2rem;
+    }
+    .age { color: var(--orange); font-weight: 800; margin-bottom: 14px; }
+    .small-card h3 { color: var(--orange); font-size: 1.25rem; }
+    .small-card:nth-child(2) h3 { color: var(--purple); }
+    .infant-img { height: 720px; }
+    .gallery img {
+      width: 100%;
+      height: 355px;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 18px 48px rgba(31,41,55,.12);
+      transition: .2s ease;
+      display: block;
+    }
+    .gallery img:hover { transform: scale(1.015); }
+    .system-panel {
+      background: var(--cream);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: 0 22px 58px rgba(31,41,55,.11);
+    }
+    .system-panel .card { padding: 22px; margin-bottom: 18px; }
+    .system-panel .card:last-child { margin-bottom: 0; }
+    .system-panel h3 { font-size: 1.25rem; color: var(--orange); margin-bottom: 8px; }
+    .system-panel .card:nth-child(2) h3 { color: var(--purple); }
+    .system-panel .card:nth-child(3) h3 { color: #54a02a; }
+    .highlight-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 20px;
+      background: var(--orange);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+    }
+    .tour-box {
+      background: var(--cream);
+      border-radius: 34px;
+      padding: 46px;
+      box-shadow: 0 22px 58px rgba(31,41,55,.11);
+      max-width: 950px;
+      margin: 40px auto 0;
+    }
+    .tour-box h3 { color: var(--orange); }
+    .cta {
+      background: var(--orange);
+      color: white;
+      border-radius: 40px;
+      padding: 58px 36px;
+      text-align: center;
+      box-shadow: 0 24px 70px rgba(242,106,61,.25);
+    }
+    .cta h2 { color: white; }
+    .cta p { color: #ffe6dc; }
+    .cta .btn { background: white; color: var(--orange); box-shadow: none; }
+    footer {
+      background: var(--charcoal);
+      color: #cbd5e1;
+      padding: 44px 0;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    footer h3, footer h4 { color: white; }
+    footer p { margin-bottom: 8px; color: #cbd5e1; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero-grid, .two-col, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero { padding: 62px 0 76px; }
+      .hero-card img, .section-img, .infant-img { height: 360px; }
+      section { padding: 66px 0; }
+      .tour-box { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Bloom and Grow Academy logo" />
+        <span>Bloom and Grow Academy</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#programs">Programs</a>
+        <a href="#tour">Schedule a Tour</a>
+        <a class="btn" href="tel:4072033985">Call Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Welcome to Bloom and Grow Academy</div>
+          <h1>Helping Little Minds Bloom and Grow</h1>
+          <p>Providing the highest quality childcare program in Orlando, Florida, where children feel safe, supported, celebrated, and excited to learn every day.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#tour">Schedule a Tour</a>
+            <a class="btn btn-secondary" href="#about">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="Children learning together" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container two-col">
+        <img class="section-img" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop" alt="Teacher with children" />
+        <div>
+          <div class="eyebrow">About Us</div>
+          <h2>A Place Where Children Thrive</h2>
+          <p>At Bloom and Grow Academy, we believe that every child progresses individually through the stages of physical, social, emotional, and intellectual development. Growth is nurtured through meaningful relationships between children, their families, and our trained caregivers.</p>
+          <p>With an open-door policy, we proudly celebrate diversity, with families and staff representing 12 different countries. Our inclusive environment encourages children to learn, grow, and thrive while developing respect and appreciation for others.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="curriculum" class="section-alt">
+      <div class="container">
+        <div class="center">
+          <div class="eyebrow">Our Curriculum</div>
+          <h2>Research-Based Learning for Every Child</h2>
+          <p class="lead">Our certified teachers use the latest research in child development to offer current practices in early education. Our curriculum is designed for consistency, clarity, and instructional strength. Frog Street programs are built for ease of use, alignment to standards, and daily fidelity.</p>
+        </div>
+        <div class="grid-2" style="margin-top: 46px;">
+          <div class="card feature-card"><div class="check">✓</div><p>Daily and weekly lesson plans with clear objectives and assessment connections.</p></div>
+          <div class="card feature-card"><div class="check">✓</div><p>Conscious Discipline integration with brain-compatible behavior strategies that reduce disruptions and build community.</p></div>
+          <div class="card feature-card"><div class="check">✓</div><p>Embedded language, social-emotional development, and routines that strengthen core skills through repetition and extension.</p></div>
+          <div class="card feature-card"><div class="check">✓</div><p>Multi-language materials designed for diverse classroom and family engagement.</p></div>
+          <div class="card feature-card"><div class="check">✓</div><p>Head Start, QRIS, and Pre-K alignment with comprehensive documentation for compliance and reporting.</p></div>
+          <div class="card feature-card"><div class="check">✓</div><p>Family engagement and coaching tools that extend learning beyond the classroom through consistent messaging.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section-white">
+      <div class="container center">
+        <div class="eyebrow">Our Programs</div>
+        <h2>Learning Programs for Every Stage</h2>
+        <div class="grid-3" style="margin-top: 46px;">
+          <div class="card program-card"><div class="icon">🌱</div><h3>Infants</h3><p class="age">3 Months – 15 Months</p><p>A safe, loving, and nurturing environment where infants build trust, comfort, confidence, and developmental foundations through individualized care and meaningful interactions.</p></div>
+          <div class="card program-card"><div class="icon">🌼</div><h3>Toddler Program</h3><p class="age">15 Months – 3 Years</p><p>Hands-on learning, social development, and structured play that encourages curiosity, independence, and confidence.</p></div>
+          <div class="card program-card"><div class="icon">🌈</div><h3>Preschool</h3><p class="age">3 – 5 Years</p><p>Preparing children for kindergarten through creative learning, literacy, social-emotional growth, and interactive activities.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container two-col">
+        <img class="section-img" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop" alt="Happy children at daycare" />
+        <div>
+          <div class="eyebrow">Home Away From Home</div>
+          <h2>A Safe, Caring, and Comfortable Environment</h2>
+          <p>At Bloom and Grow Academy, we understand the importance of creating a nurturing, safe, and comfortable environment where every child feels at home. Our goal is to provide a warm and caring atmosphere that supports your child’s growth, happiness, and well-being each day.</p>
+          <p>We provide everything needed to help keep your child safe, comfortable, and cared for while they are with us. Our center proudly participates in the Child Food Program, where children receive nutritious breakfast, lunch, and snacks at no cost.</p>
+          <div class="grid-2">
+            <div class="card small-card"><h3>Nutritious Meals</h3><p>Healthy breakfast, lunch, and snacks are provided daily through our Child Food Program.</p></div>
+            <div class="card small-card"><h3>Secure Facility</h3><p>Cameras located inside and outside our facility help us maintain a safe environment for every child.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="container two-col">
+        <div>
+          <div class="eyebrow">Infant Program</div>
+          <h2>Infants</h2>
+          <p class="age">3 Months – 15 Months</p>
+          <p>At Bloom and Grow Academy, our Infant Program provides a safe, loving, and nurturing environment where your baby can grow emotionally, socially, and developmentally. We focus on building strong, trusting relationships so that every child feels secure, valued, and cared for each day.</p>
+          <p>Through individualized attention and responsive caregiving, we support important early milestones such as motor development, communication, sensory exploration, and social interaction. Our gentle daily routines encourage curiosity, comfort, and confidence while meeting each infant’s unique needs and schedule.</p>
+          <p>We believe that strong partnerships with parents are essential during these early stages of development. By working closely with families, we help create a smooth and joyful transition into early childhood while laying a strong foundation for lifelong learning.</p>
+          <p>Our infant curriculum incorporates Frog Street’s Infant Joyful Beginnings program, which is designed to support intentional caregiving, meaningful interactions, sensory discovery, and emotionally supportive early language experiences.</p>
+        </div>
+        <img class="section-img infant-img" src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="Infant classroom" />
+      </div>
+    </section>
+
+    <section>
+      <div class="container center">
+        <div class="eyebrow">Daily Moments</div>
+        <h2>Life at Bloom and Grow Academy</h2>
+        <div class="grid-3 gallery" style="margin-top: 46px;">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop" alt="School gallery image" />
+          <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop" alt="School gallery image" />
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop" alt="School gallery image" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="container two-col">
+        <div>
+          <div class="eyebrow">Our System</div>
+          <h2>Keeping Families Connected Every Day</h2>
+          <p>We prioritize a collaborative working relationship with parents and keep families informed about their child’s growth and progress through Brightwheel.</p>
+          <p>This online assessment and communication platform allows our teachers to easily gather, organize, and share information with families throughout the day, helping parents stay connected to their child’s learning experiences, daily activities, and developmental milestones.</p>
+        </div>
+        <div class="system-panel">
+          <div class="card"><h3>Real-Time Updates</h3><p>Parents receive updates throughout the day about meals, naps, activities, and classroom experiences.</p></div>
+          <div class="card"><h3>Development Tracking</h3><p>Teachers document milestones and learning progress to help families stay involved in every stage of development.</p></div>
+          <div class="card"><h3>Family Communication</h3><p>Brightwheel creates seamless communication between teachers and families for a stronger learning partnership.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container center">
+        <div class="eyebrow">Why Families Will Love Bloom and Grow</div>
+        <h2>Built With Families in Mind</h2>
+        <div class="grid-3" style="margin-top: 46px; text-align: left;">
+          <div class="card"><div class="highlight-icon">✨</div><h3>Opening Soon in Orlando</h3><p>Bloom and Grow Academy is preparing to welcome families into a warm, nurturing, and educational environment designed for early childhood success.</p></div>
+          <div class="card"><div class="highlight-icon">✨</div><h3>Inclusive Learning Environment</h3><p>We proudly celebrate diversity with families and staff representing 12 different countries, helping children develop respect and appreciation for others.</p></div>
+          <div class="card"><div class="highlight-icon">✨</div><h3>Research-Based Curriculum</h3><p>Our Frog Street curriculum and Conscious Discipline approach provide engaging, developmentally appropriate experiences that support lifelong learning.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tour" class="section-white">
+      <div class="container center">
+        <div class="eyebrow">Schedule a Tour</div>
+        <h2>Make Sure It’s the Right Fit Before You Commit</h2>
+        <p class="lead">At Bloom and Grow Academy, we believe in creating a welcoming community where every family feels valued and connected. From the moment you walk through our doors, we want you and your child to feel comfortable, supported, and at home.</p>
+        <p class="lead">We encourage families to reach out and schedule a tour to meet our team, explore our center, and learn more about our programs and daily activities. Choosing the right childcare provider is an important decision, and we are committed to helping parents feel confident and secure every step of the way.</p>
+        <div class="tour-box">
+          <h3>A True Home Away From Home</h3>
+          <p>Our goal is to provide a true “home away from home” where children can learn, grow, and thrive in a safe, loving, and nurturing environment.</p>
+          <a class="btn" href="mailto:bloom.growacademy@gmail.com?subject=Schedule%20a%20Tour%20at%20Bloom%20and%20Grow%20Academy">Schedule Your Tour Today</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to Learn More About Bloom and Grow Academy?</h2>
+          <p>Contact us today to learn more about everything Bloom and Grow Academy has to offer and discover a nurturing environment where your child can learn, grow, and shine.</p>
+          <a class="btn" href="mailto:bloom.growacademy@gmail.com">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Bloom and Grow Academy</h3>
+        <p>Inspiring confidence, creativity, and a lifelong love of learning in every child.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>5029 Edgewater Dr</p>
+        <p>Orlando, FL 32810</p>
+        <p>Email: <a href="mailto:bloom.growacademy@gmail.com">bloom.growacademy@gmail.com</a></p>
+        <p>Phone: <a href="tel:4072033985">407-203-3985</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
